@@ -51,6 +51,14 @@ bool BamReader::Close()
     return d->Close();
 }
 
+bool BamReader::FSeek(const int64_t& position) {
+    return d->Seek(position);
+}
+
+int64_t BamReader::FTell() const {
+    return d->Tell();
+}
+
 /*! \fn bool BamReader::CreateIndex(const BamIndex::IndexType& type)
     \brief Creates an index file for current BAM file.
 

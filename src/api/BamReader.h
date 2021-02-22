@@ -15,6 +15,7 @@
 #include "api/BamIndex.h"
 #include "api/SamHeader.h"
 #include "api/api_global.h"
+//#include "api/internal/bam/BamReader_p.h"
 
 namespace BamTools {
 
@@ -35,6 +36,9 @@ public:
     // ----------------------
     // BAM file operations
     // ----------------------
+
+    bool FSeek(const int64_t& position);
+    int64_t FTell() const;
 
     // closes the current BAM file
     bool Close();
